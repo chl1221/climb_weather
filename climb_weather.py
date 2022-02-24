@@ -64,7 +64,7 @@ def get_forecast() -> None:
         for day in data:
             date = dt.datetime.fromtimestamp(day['time'])
             if date.weekday() >= 5:
-                if day["temperatureHigh"] <= 82 and day["temperatureLow"] >= 30:
+                if day["temperatureHigh"] <= 82 and day["temperatureLow"] >= 65:
                     if float(day['precipProbability']) <= 0.1:
                         if day["windSpeed"] <= 6:
                             # for_check.append(day)
