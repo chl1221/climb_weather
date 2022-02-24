@@ -40,7 +40,7 @@ def get_rc_spots() -> list:
         near_spots_heap = []
         for spot in data:
             # some data do not have latitude and longitude
-            if spot["latitude"] != "None" and spot["longitude"] != "None":
+            if spot["latitude"] != "None" or spot["longitude"] != "None":
                 distance = round(distance_cal(lat, lon, float(spot['latitude']), float(spot['longitude'])), 2)
                 if distance <= 150:
                     heapq.heappush(near_spots_heap, (distance, spot['areaId'], spot['name']))
